@@ -1,0 +1,91 @@
+7) 
+public int countUnassignedStudents()
+{
+    int count = 0;
+    for (int i = 0; i < numberOfStudents; i++)
+    {
+        if (allStudents[i].getAssignedActivity().equals("NONE"))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+8)
+public void displayAvailableActivities()
+{
+    for (int i = 0; i < numberOfActivities; i++)
+    {
+    Activity activity = allActivities[i];
+    if (activity.isAvailable())
+    {
+    int placesLeft = activity.getMaximumPlaces() - activity.getPlacesFilled(); //?????? 애매 
+    System.out.println("Activity " + activity.getActivityNumber() + ": "+  activity.getActivityName()  + " Places left: " + placesLeft);
+    }
+    }
+}
+
+9) 
+public void displayStudentAssignments()
+{
+    for (int i = 0; i < numberOfStudents; i++)
+    {
+        Student student = allStudents[i];
+        String assignedActivity = student.getAssignedActivity();
+        if (!assignedActivity.equals("NONE"))
+        {
+            System.out.println("Student " + student.getStudentName() + " is assigned to activity: " + assignedActivity);
+        }
+        else
+        {
+            System.out.println("Student " + student.getStudentName() + " is not assigned to any activity.");
+        }
+    }
+}
+
+10)
+
+public class OutdoorActivity extends Activity
+{
+    private boolean specialClothingRequired;
+    public OutdoorActivity(int activityNumber, String activityName, int maximumPlaces, boolean specialClothingRequired)
+{   
+    super(activityNumber, activityName, maximumPlaces);
+    this.specialClothingRequired = specialClothingRequired;
+}
+
+public boolean isSpecialClothingRequired()
+{
+    return specialClothingRequired;
+}
+}
+
+11)
+public int calculateIncome()
+{
+    return getPlacesFilled() * feePerStudent;
+}
+
+12)
+public double averageRequests(int[][] requests, int activityPosition)
+{
+    int total = 0;
+    for (int year = 0; year < requests[activityPosition].length; year++) ///????
+    {
+        total += requests[activityPosition][year];  //?????
+    }
+    return (double) total / requests[activityPosition].length;
+}
+
+13) 
+public void calculateAllAverages(int[][] requests, double[] averages)
+{
+    for (int activity = 0; activity < requests.length; activity++)
+    {
+        averages[activity] = averageRequests(requests, activity); //????
+    }
+}
+
+
