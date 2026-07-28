@@ -1,0 +1,9 @@
+public class OutdoorActivity extends Activity
+{
+    private boolean specialClothingRequired;
+    public OutdoorActivity(int activityNumber, String activityName, int maximumPlaces, boolean specialClothingRequired)
+    {   
+        super(activityNumber, activityName, maximumPlaces);
+        this.specialClothingRequired = specialClothingRequired;
+    }
+}

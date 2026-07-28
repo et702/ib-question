@@ -76,7 +76,7 @@ public double averageRequests(int[][] requests, int activityPosition)
     {
         total += requests[activityPosition][year];  //?????
     }
-    return (double) total / requests[activityPosition].length;
+    return 
 }
 
 13) 
@@ -88,4 +88,66 @@ public void calculateAllAverages(int[][] requests, double[] averages)
     }
 }
 
+
+14)
+
+// requests
+// averages
+// allActivities
+for(int i = 0; i < requests.length; i++)
+{
+    if (requests[i][0] < averages[i]) {
+        System.out.println(allActivities[i].getActivityName() + " is under-requested.");
+    }
+}
+
+15
+public int totalRevenue() {
+    int total = 0;
+    for (int i = 0; i < numberofEvents; i++) {
+        total += events[i].getTicketPrice() * events[i].getTicketsSold();
+    }
+    return total;
+}
+
+16
+
+public Event mostPopularEvent() {
+    Event mostPopular = events[0];
+
+    for (int i = 1; i < numberofEvents; i++) {
+        if (events[i].getTicketsSold() > mostPopular.getTicketsSold()) {
+            mostPopular = events[i];
+        }
+    }
+    return mostPopular;
+}
+
+
+17
+
+public int[] differentTicketPrices() {
+    int[] prices = new int[20];
+    int numberOfPrices = 0; // prices array의 index
+
+    for (int i = 0; i < numberOfEvents; i++) {
+        int price = events[i].getTicketPrice();
+        boolean found = false;
+
+        for (int j = 0; j < numberOfPrices; j++) {
+            if (prices[j] == price) {
+                found = true;
+            }
+        }
+
+        if (!found && numberOfPrice < prices.length) {
+            prices[numberOfPrices] = price;
+            numberOfPrices++;
+        }
+    }
+    return prices;
+}
+
+
+18
 
