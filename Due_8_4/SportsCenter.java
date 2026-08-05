@@ -26,53 +26,56 @@ public class SportsCenter
         return null;
     }
 
-    /*
-     * Question 17(a)
-     *
-     * Write addActivity() here.
-     */
+    public boolean addActivity(Activity newActivity)
+    {
+    if (numberOfActivities < allActivities.length)
+    {
+        allActivities[numberOfActivities] = newActivity;
+        numberOfActivities++;
+        return true;
+    }
+    return false;
+    }
 
-    /*
-     * Question 17(b)
-     *
-     * Write findActivity() here.
-     */
+    public Activity findActivity(String searchName)
+    {
+    for (int i = 0; i < numberOfActivities; i++)
+    {
+        if (allActivities[i].getActivityName().equalsIgnoreCase(searchName))
+        {
+            return allActivities[i];
+        }
+    }
 
-    /*
-     * Question 17(c)
-     *
-     * Write countAffordable() here.
-     */
+    return null;
+    }
 
-    /*
-     * Question 17(d)
-     *
-     * Write calculateAveragePrice() here.
-     */
+    private void swap(int first, int second)
+    {
+        Activity temporary = allActivities[first];
+        allActivities[first] = allActivities[second];
+        allActivities[second] = temporary;
+    }
 
-    /*
-     * Question 18(a)
-     *
-     * Write getAffordableActivities() here.
-     */
+    public void sortByPrice()
+    {
+        
+    for (int current = 0; current < numberOfActivities - 1; current++)
+    {
+        int smallest = current;
 
-    /*
-     * Question 18(b)
-     *
-     * Write getAvailableActivities() here.
-     */
+        for (int check = current + 1; check < numberOfActivities; check++)
+        {
+            if (allActivities[check].getPrice() < allActivities[smallest].getPrice())
+            {
+                smallest = check;
+            }
+        }
 
-    /*
-     * Question 19(a)
-     *
-     * Write swap() here.
-     */
+        swap(current, smallest);
+    }
+    }
 
-    /*
-     * Question 19(b)
-     *
-     * Write sortByPrice() here.
-     */
 
     public void displayAllActivities()
     {
