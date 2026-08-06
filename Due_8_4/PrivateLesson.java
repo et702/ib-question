@@ -1,3 +1,6 @@
+package Due_8_4;
+
+
 public class PrivateLesson extends Activity
 {
     private String instructorName;

@@ -1,4 +1,7 @@
-public Activity(String activityCode, String activityName,
+package Due_8_4;
+
+public class Activity {
+    public Activity(String activityCode, String activityName,
                 double price, int maximumPlaces)
 {
     this.activityCode = activityCode;
@@ -34,3 +37,5 @@ public boolean bookPlace()
     return false;
 }
 
+
+}
