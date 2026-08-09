@@ -25,7 +25,13 @@ public class MemberManager
 
     public int countPriorityMembers(int index)
     {
-        // TODO: Question 17(b)
-        return 0;
+        if (index >= numberOfMembers)
+        {
+            return 0;
+        }
+
+        //if (allMembers[inde
+        //}
+
     }
 }

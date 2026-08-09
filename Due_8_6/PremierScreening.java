@@ -14,5 +14,14 @@ package Due_8_6;
 
 public class PremierScreening {
     
+    private String guestSpeaker;
+    private double additionalFee;
+
+    public PremiereScreening(String screeningID, Film film, Venue venue, String guestSpeaker, double additionalFee)
+    {
+        super(screeningID, film, venue);
+        this.guestSpeaker = guestSpeaker;
+        this.additionalFee = additionalFee;
+    }
 }
 

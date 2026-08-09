@@ -2,6 +2,7 @@ package Due_8_6;
 
 public class Film
 {
+    
     private String filmCode;
     private String title;
     private String director;
@@ -13,19 +14,22 @@ public class Film
                 String director, int runningTime,
                 double ticketPrice)
     {
-        // TODO: Question 14(c)
+        this.filmCode = filmCode;
+        this.title = title;
+        this.director = director;
+        this.runningTime = runningTime;
+        this.ticketPrice = ticketPrice;
+        this.soldOut = false;
     }
 
     public String getTitle()
     {
-        // TODO: Question 14(d)
-        return null;
+        return title;
     }
 
     public double getTicketPrice()
     {
-        // TODO: Question 14(e)
-        return 0.0;
+        return ticketPrice;
     }
 
     public boolean isSoldOut()
@@ -35,6 +39,8 @@ public class Film
 
     public void setSoldOut()
     {
-        // TODO: Question 14(f)
+        soldOut = true;
     }
+
+    // 14g)  Film openingFilm = new Film("F101", "The Last Signal", "Mina Park", 118, 14.50);
 }

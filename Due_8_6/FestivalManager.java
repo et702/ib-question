@@ -13,32 +13,63 @@ public class FestivalManager
 
     public boolean addScreening(Screening newScreening)
     {
-        // TODO: Question 16(b)
-        return false;
+        if (numberOfScreenings >= allScreenings.length)
+        {
+            return false;
+        }
+        else
+        {
+            allScreenings[numberOfScreenings] = newScreening; 
+            numberOfScreenings++;
+            return true;
+        }
+        
     }
 
     public Screening findScreeningByTitle(String searchTitle)
     {
-        // TODO: Question 16(c)
-        return null;
+        for (int i = 0; i < numberOfScreenings; i++)
+        {
+        //if (allScreenings[i].getFilm().get??
+
     }
 
     public Screening[] getAvailableScreenings()
     {
-        // TODO: Question 16(d)
-        return null;
+        Screening[] available = new Screening[50];
+        int count = 0;
+
+        for (int i = 0; i < numberOfScreenings; i++)
+        {
+            if (allScreenings[i].hasAvailableSeat())
+            {
+                available[count] = allScreenings[i];
+                count++;
+            }
+        }
     }
 
     private void swap(int first, int second)
     {
-        // TODO: Question 16(e)
+        Screening temp = allScreenings[first];
+        allScreenings[first] = allScreenings[second];
+        allScreenings[second] = temp;
     }
 
     public void sortByTicketPrice()
     {
-        // TODO: Question 16(f)
-    }
+        for (int i = 0; i < numberOfScreenings; i++)
+        {
+            int lowest = i;
 
+        for (int j = i + 1; j < numberOfScreenings; j++)
+        {
+            if (allScreenings[j].getFilm()
+        }
+    
+        }
+    }
+    
     public int getNumberOfScreenings()
     {
         return numberOfScreenings;

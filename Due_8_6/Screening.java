@@ -9,19 +9,35 @@ public class Screening
 
     public Screening(String screeningID, Film film, Venue venue)
     {
-        // TODO: Question 15(c)
+        this.screeningID = screeningID;
+        this.film = film;
+        this.venue = venue;
+        this.seatsBooked = 0;
     }
 
     public boolean hasAvailableSeat()
     {
-        // TODO: Question 15(d)
-        return false;
+        if(seatsBooked < venue.getCapacity())
+        {
+            return true
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public boolean bookSeat()
     {
-        // TODO: Question 15(e)
-        return false;
+        if (hasAvailableSeat())
+        {   
+            seatsBooked++;
+            return true;
+        }
+        else{
+            return false;
+        }
+     
     }
 
     public Film getFilm()
