@@ -19,7 +19,7 @@ public class Screening
     {
         if(seatsBooked < venue.getCapacity())
         {
-            return true
+            return true;
         }
         else
         {

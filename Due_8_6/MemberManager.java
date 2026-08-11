@@ -30,6 +30,12 @@ public class MemberManager
             return 0;
         }
 
+        if (allMembers[index].getLoyaltyPoints() >= 1000) {
+            return 1 + countPriorityMembers(index + 1);
+        } else {
+            return countPriorityMembers(index + 1);
+        }
+
         //if (allMembers[inde
         //}
 

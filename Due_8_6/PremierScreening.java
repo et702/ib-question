@@ -12,12 +12,12 @@ package Due_8_6;
  * - use super(...) in its constructor
  */
 
-public class PremierScreening {
+public class PremierScreening extends Screening {
     
     private String guestSpeaker;
     private double additionalFee;
 
-    public PremiereScreening(String screeningID, Film film, Venue venue, String guestSpeaker, double additionalFee)
+    public PremierScreening(String screeningID, Film film, Venue venue, String guestSpeaker, double additionalFee)
     {
         super(screeningID, film, venue);
         this.guestSpeaker = guestSpeaker;

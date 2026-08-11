@@ -23,6 +23,17 @@ public class FestivalManager
             numberOfScreenings++;
             return true;
         }
+
+        /*
+        if (numberOfScreenings < allScreenings.length)
+        {
+            allScreenings[numberOfScreenings] = newScreening; 
+            numberOfScreenings++;
+            return true;
+        }
+        return false;
+        
+         */
         
     }
 
@@ -30,8 +41,11 @@ public class FestivalManager
     {
         for (int i = 0; i < numberOfScreenings; i++)
         {
-        //if (allScreenings[i].getFilm().get??
-
+            if (allScreenings[i].getFilm().getTitle().equalsIgnoreCase(searchTitle)) {
+                return allScreenings[i];
+            }
+        }
+        return null;
     }
 
     public Screening[] getAvailableScreenings()
@@ -47,6 +61,8 @@ public class FestivalManager
                 count++;
             }
         }
+
+        return available;
     }
 
     private void swap(int first, int second)
@@ -58,15 +74,18 @@ public class FestivalManager
 
     public void sortByTicketPrice()
     {
-        for (int i = 0; i < numberOfScreenings; i++)
+        for (int i = 0; i < numberOfScreenings - 1; i++)
         {
             int lowest = i;
 
-        for (int j = i + 1; j < numberOfScreenings; j++)
-        {
-            if (allScreenings[j].getFilm()
-        }
-    
+            for (int j = i + 1; j < numberOfScreenings; j++)
+            {
+                if (allScreenings[j].getFilm().getTicketPrice() 
+                    < allScreenings[lowest].getFilm().getTicketPrice()) {
+                        lowest = j;
+                }
+            }
+            swap(i, lowest);
         }
     }
     
