@@ -36,22 +36,27 @@ public class FestivalSchedule
 
     public Performance findMostPopular()
     {
+        Performance mostPopular = null;
+
         for (int row = 0; row < performances.length; row++)
         {
             for (int col = 0;
                  col < performances[row].length;
                  col++)
             {
-                if? 
+                Performance current = performances[row][col];
+                if (current.getAudience() > mostPopular.getAudience()) {
+                    mostPopular = current;
+                }
             }
         }
+        return mostPopular;
     }
 
     public int countPerformancesAbovePrice(double minimumPrice)
     {
     
         int count = 0;
-
         for (int row = 0; row < performances.length; row++)
         {
             for (int col = 0; col < performances[row].length; col++)
@@ -62,12 +67,22 @@ public class FestivalSchedule
                 }
             }
         }
-
+        return count;
     }
 
     public int[] findPerformer(String performerName)
     {
-        // TODO Question 4
-        return null;
+
+        for (int row = 0; row < performances.length; row++)
+        {
+            for (int col = 0; col < performances[row].length; col++)
+            {
+                Performance current = performances[row][col];
+                if (current.getPerformer().equals(performerName)) {
+                    return new int[] {row, col};
+                }
+            }
+        }
+        return new int[] {-1, -1};
     }
 }

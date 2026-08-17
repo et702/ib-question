@@ -16,7 +16,12 @@ public class TicketStatistics
             return 0;
         }
 
+        return ticketsSold[index] + totalRecursive(index + 1);
     }
+
+    // totalRecursive(0) ==> ticketsSold[0] + totalRecursive(1)
+    // totalRecursive(1) ==> ticketsSold[1] + totalRecursive(2)
+    // totalRecursive(2) ==> ticketsSold[2] + totalRecursive(3)...
 
     public int countAboveRecursive(int index,
                                    int target)
@@ -28,8 +33,10 @@ public class TicketStatistics
 
         if (ticketsSold[index] > target)
         {
-            ?
+            return 1 + countAboveRecursive(index + 1, target);  
         }
+
+        return countAboveRecursive(index, target);
     }
 
     public int maximumRecursive(int index)
@@ -39,6 +46,7 @@ public class TicketStatistics
             return ticketsSold[index];
         }
 
+        int maxOfRest = maximumRecursive(index + 1);
         if (ticketsSold[index] > maxOfRest)
         {
             return ticketsSold[index];
