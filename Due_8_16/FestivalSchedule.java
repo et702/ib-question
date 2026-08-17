@@ -14,24 +14,55 @@ public class FestivalSchedule
                                Performance performance)
     {
         // TODO Question 3(a)
+        performances[stage][timeSlot] = performance;
+
     }
 
     public int totalAudience()
     {
-        // TODO Question 3(b)
-        return 0;
+        int total = 0;
+        for (int row = 0; row < performances.length; row++)
+        {
+            for (int col = 0; col < performances[row].length; col++)
+            {
+                if (performances[row][col] != null)
+                {
+                    total += performances[row][col].getAudience();
+                }
+            }
+        }
+        return total;
     }
 
     public Performance findMostPopular()
     {
-        // TODO Question 3(c)
-        return null;
+        for (int row = 0; row < performances.length; row++)
+        {
+            for (int col = 0;
+                 col < performances[row].length;
+                 col++)
+            {
+                if? 
+            }
+        }
     }
 
     public int countPerformancesAbovePrice(double minimumPrice)
     {
-        // TODO Question 3(d)
-        return 0;
+    
+        int count = 0;
+
+        for (int row = 0; row < performances.length; row++)
+        {
+            for (int col = 0; col < performances[row].length; col++)
+            {
+                if (performances[row][col] != null && performances[row][col].getTicketPrice() > minimumPrice)
+                {
+                    count++;
+                }
+            }
+        }
+
     }
 
     public int[] findPerformer(String performerName)

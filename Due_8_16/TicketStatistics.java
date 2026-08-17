@@ -11,20 +11,39 @@ public class TicketStatistics
 
     public int totalRecursive(int index)
     {
-        // TODO Question 5(a)
-        return 0;
+        if (index == ticketsSold.length)
+        {
+            return 0;
+        }
+
     }
 
     public int countAboveRecursive(int index,
                                    int target)
     {
-        // TODO Question 5(b)
-        return 0;
+        if (index == ticketsSold.length)
+        {
+            return 0;
+        }
+
+        if (ticketsSold[index] > target)
+        {
+            ?
+        }
     }
 
     public int maximumRecursive(int index)
     {
-        // TODO Question 5(c)
-        return 0;
+        if (index == ticketsSold.length - 1)
+        {
+            return ticketsSold[index];
+        }
+
+        if (ticketsSold[index] > maxOfRest)
+        {
+            return ticketsSold[index];
+        }
+
+        return maxOfRest;
     }
 }
